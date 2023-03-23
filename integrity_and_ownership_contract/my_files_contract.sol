@@ -1,11 +1,13 @@
-pragma solidity 0.8.18;
+pragma solidity ^0.8.18;
 
 contract MyFile{
+    //Specifying the structure of our file
     struct FileDetails{
         uint timestamp;
         string me;
     }
-    
+   
+    //Specifying mapping to store data as key value
     mapping (string => FileDetails) files;
 
     event logFileAddedStatus (bool status, uint timestamp, string me, string fileHash);
@@ -14,6 +16,7 @@ contract MyFile{
     function set(string me,string fileHash){
         //To check if the key exists, we check default value i.e all bits are 0
         if(files[fileHash].timestamp==0){
+            //Storing file hash mapped to file details
             files[fileHash]=FileDetails(block.timestamp,me);
 
             //Trigger an event for our frontend app to alert that the details of our file have been stored.
