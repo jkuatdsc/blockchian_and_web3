@@ -7,7 +7,7 @@ contract MyFile{
         string me;
     }
    
-    //Specifying mapping to store data as key value
+    //Specifying mapping to store data as key value(string to FileDetails struct)
     mapping (string => FileDetails) files;
 
     event logFileAddedStatus (bool status, uint timestamp, string me, string fileHash);
