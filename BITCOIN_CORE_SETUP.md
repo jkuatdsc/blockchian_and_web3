@@ -75,6 +75,6 @@ $ sudo make install
 ## Running the core node 
 
 ```
-$ bitciond 
+$ bitcoind 
 
 ```
